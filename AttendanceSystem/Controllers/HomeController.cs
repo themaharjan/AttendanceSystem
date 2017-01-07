@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AttendanceSystem.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,12 @@ namespace AttendanceSystem.Controllers
     {
         public ActionResult Index()
         {
+            VajraEntities db = new VajraEntities();
+
+            var listUser = db.Users;
+
+            List<User> userList = db.Users.ToList();
+
             return View();
         }
 
